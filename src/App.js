@@ -2,16 +2,15 @@ import logo from './logo.svg';
 import './App.css';
 import { Button } from '@mui/material';
 import axios from 'axios';
+import GenerateService from './services/generateService';
 
 function App() {
   async function handleDownloadPdf() {
     try {
-      const response = await axios.get('/endpoint', {
-        responseType: 'json', 
-      });
+      
+      const response = GenerateService.getPds()
   
       const fileUrl = response.data.fileUrl;
-  
       const link = document.createElement('a');
       link.href = fileUrl;
       link.download = 'downloaded.pdf';
