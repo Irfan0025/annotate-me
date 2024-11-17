@@ -11,6 +11,7 @@ function App() {
       const response = GenerateService.getPds()
   
       const fileUrl = response.data.fileUrl;
+  
       const link = document.createElement('a');
       link.href = fileUrl;
       link.download = 'downloaded.pdf';
